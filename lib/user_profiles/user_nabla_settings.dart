@@ -84,7 +84,28 @@ class _NablaSettingsState extends State<NablaSettings> {
             SizedBox(
               width: MediaQuery.of(context).size.width*0.9,
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    // return object of type Dialog
+                    return AlertDialog(
+                      title: new Text("Conditions Générales Utilisateur"),
+                      content: new Text("bla-bla-bla"),
+                      actions: <Widget>[
+                        // usually buttons at the bottom of the dialog
+                        new FlatButton(
+                          child: new Text("Fermer"),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );},
+
+
+
                 child: Text('CGU',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -93,12 +114,37 @@ class _NablaSettingsState extends State<NablaSettings> {
                 ),
               ),
             ),
+
+
+
             Spacer(flex: 2,),
+
+
+
+
 
             SizedBox(
               width: MediaQuery.of(context).size.width*0.9,
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    // return object of type Dialog
+                    return AlertDialog(
+                      title: new Text("A propos"),
+                      content: new Text("Gabriel Wateau - CEO \n Florent LIN : CFO"),
+                      actions: <Widget>[
+                        // usually buttons at the bottom of the dialog
+                        new FlatButton(
+                          child: new Text("Fermer"),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );},
                 child: Text('A propos',
                   textAlign: TextAlign.center,
                   style: TextStyle(
